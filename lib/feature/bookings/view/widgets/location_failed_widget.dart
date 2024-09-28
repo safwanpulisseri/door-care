@@ -1,0 +1,43 @@
+// import 'package:flutter/material.dart';
+// import 'package:flutter_svg/svg.dart';
+
+// import '../../../../core/theme/color/app_color.dart';
+
+// class LocationFailed extends StatelessWidget {
+//   const LocationFailed({
+//     super.key,
+//   });
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Row(
+//       children: [
+//         CircleAvatar(
+//           backgroundColor: Colors.transparent,
+//           child: Container(
+//             decoration: BoxDecoration(
+//               shape: BoxShape.circle,
+//               border: Border.all(
+//                 color: AppColor.toneThree.withOpacity(0.7),
+//                 width: 1.0,
+//               ),
+//             ),
+//             child: Padding(
+//               padding: const EdgeInsets.all(8.0),
+//               child: SvgPicture.asset("assets/svg/booking_two.svg"),
+//             ),
+//           ),
+//         ),
+//         const SizedBox(width: 10),
+//         const Text(
+//           'Error fetching location',
+//           style: TextStyle(
+//             color: AppColor.secondary,
+//             fontSize: 16,
+//             fontWeight: FontWeight.bold,
+//           ),
+//         ),
+//       ],
+//     );
+//   }
+// }
