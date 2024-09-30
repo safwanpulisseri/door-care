@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+// ignore: library_prefixes
 import 'package:socket_io_client/socket_io_client.dart' as IO;
 
 class SocketService {
@@ -16,10 +18,13 @@ class SocketService {
 
     // Listen for connection events
     socket.on('connect', (_) {
-      print('Connected to socket server');
+      if (kDebugMode) {
+        print('Connected to socket server');
+      }
       socket.emit('join', userId); // Join a room with userId
     });
 
+    // ignore: avoid_print
     socket.on('disconnect', (_) => print('Disconnected from socket server'));
   }
 

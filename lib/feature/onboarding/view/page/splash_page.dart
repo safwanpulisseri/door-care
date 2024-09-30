@@ -1,4 +1,4 @@
-import 'package:door_care/feature/auth/bloc/auth_bloc/auth_bloc.dart';
+import 'package:door_care/feature/auth/auth_bloc/auth_bloc.dart';
 import 'package:door_care/feature/navigation_menu/page/home_navigation_menu.dart';
 import 'package:door_care/feature/onboarding/view/page/onboarding_home.dart';
 import 'package:door_care/core/theme/color/app_color.dart';

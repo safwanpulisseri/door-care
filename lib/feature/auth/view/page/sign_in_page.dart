@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:toastification/toastification.dart';
 import '../../../../core/widget/toastifiaction_widget.dart';
-import '../../bloc/auth_bloc/auth_bloc.dart';
+import '../../auth_bloc/auth_bloc.dart';
 import '../../../../core/widget/app_logo_widget.dart';
 import '../../../navigation_menu/page/home_navigation_menu.dart';
 import '../widget/auth_button.dart';
@@ -36,7 +36,6 @@ class _SignInPageState extends State<SignInPage> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return BlocListener<AuthBloc, AuthState>(
       listener: (context, state) {
         if (state is AuthLoadingState) {

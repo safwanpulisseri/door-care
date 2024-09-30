@@ -1,4 +1,3 @@
-// service_card.dart
 import 'package:flutter/material.dart';
 import '../../../../core/theme/color/app_color.dart';
 
@@ -10,16 +9,21 @@ class ServiceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 240,
-      height: 160,
-      margin: const EdgeInsets.only(right: 20),
+    return SizedBox(
+      width: double.infinity,
+      height: 230,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image.network(image,
-                  fit: BoxFit.cover, width: 240, height: 150)),
+            borderRadius: BorderRadius.circular(20),
+            child: Image.network(
+              image,
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: 190,
+            ),
+          ),
           const SizedBox(height: 8),
           Text(
             title,
@@ -28,6 +32,7 @@ class ServiceCard extends StatelessWidget {
                   fontSize: 17,
                 ),
           ),
+          
         ],
       ),
     );

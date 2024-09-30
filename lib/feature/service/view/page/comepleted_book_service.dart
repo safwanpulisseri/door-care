@@ -13,6 +13,7 @@ class CompletedBookService extends StatelessWidget {
   Widget build(BuildContext context) {
     Future.delayed(const Duration(seconds: 2), () {
       Navigator.pushReplacement(
+        // ignore: use_build_context_synchronously
         context,
         MaterialPageRoute(
           builder: (ctx) => HomeNavigationMenu(),
@@ -46,7 +47,7 @@ class CompletedBookService extends StatelessWidget {
                 color: AppColor.background,
               ),
             ),
-            Spacer(
+            const Spacer(
               flex: 2,
             ),
             SizedBox(

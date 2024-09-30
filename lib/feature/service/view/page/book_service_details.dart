@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../core/theme/color/app_color.dart';
 import '../../../../core/widget/opacity_container.dart';
 import '../../../home/data/model/fetch_all_service_model.dart';
+import '../widget/bottom_app_bar_widget.dart';
 import 'find_location_book_service.dart';
 
 class ServiceDetailsPage extends StatelessWidget {
@@ -90,21 +91,7 @@ class ServiceDetailsPage extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 16),
-          // Row(
-          //   children: [
-          //     const Padding(
-          //       padding: EdgeInsets.all(10.0),
-          //       child: OpacityContainer(),
-          //     ),
-          //     Text(
-          //       service.serviceName,
-          //       style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-          //             color: AppColor.secondary,
-          //           ),
-          //     ),
-          //   ],
-          // ),
-          //const SizedBox(height: 8),
+          
           Column(
             children: [
               Row(
@@ -126,7 +113,7 @@ class ServiceDetailsPage extends StatelessWidget {
                   const SizedBox(
                     width: 10,
                   ),
-                  Text(service.description ?? 'No description available.',
+                  Text(service.description,
                       style: Theme.of(context)
                           .textTheme
                           .headlineMedium
@@ -213,58 +200,21 @@ class ServiceDetailsPage extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomAppBar(
-        color: AppColor.textfield,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              style: ButtonStyle(
-                minimumSize: WidgetStateProperty.all(const Size(200, 50)),
-                backgroundColor: WidgetStateProperty.all(AppColor.textfield),
-                foregroundColor: WidgetStateProperty.all(
-                    AppColor.secondary.withOpacity(0.7)),
-                side: WidgetStateProperty.all(BorderSide(
-                  color: AppColor.toneThree.withOpacity(0.5),
-                  width: 2,
-                )),
-                shape: WidgetStateProperty.all(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-              ),
-              child: const Text(
-                'Back',
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
+     bottomNavigationBar: BottomAppBarWidget(
+          leftButtonText: 'Back',
+          rightButtonText: 'Book Now',
+          onLeftButtonPressed: () {
+            Navigator.of(context).pop();
+          },
+          onRightButtonPressed: () {
+            Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: (context) =>
                           FindLocationBookService(service: service)),
                 );
-              },
-              style: ButtonStyle(
-                minimumSize: WidgetStateProperty.all(const Size(200, 50)),
-                backgroundColor: WidgetStateProperty.all(AppColor.primary),
-                foregroundColor: WidgetStateProperty.all(Colors.white),
-                shape: WidgetStateProperty.all(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-              ),
-              child: const Text('Book Now'),
-            ),
-          ],
+          },
         ),
-      ),
     );
   }
 }

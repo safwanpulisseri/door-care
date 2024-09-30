@@ -20,13 +20,6 @@ class AuthRepo {
       return null;
     }
   }
-  //   Future<UserModel?> getUser() async {
-  //   return await _authLocalService.getUser();
-  // }
-
-  // Future<String?> getToken() async {
-  //   return await _authLocalService.getToken();
-  // }
 
   Future<UserModel> emailSignIn({
     required String email,

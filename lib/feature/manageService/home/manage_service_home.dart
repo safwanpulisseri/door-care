@@ -1,6 +1,4 @@
-import 'package:door_care/feature/manageService/site/google_two.dart';
 import 'package:flutter/material.dart';
-import '../site/g_map.dart';
 
 class ManageServiceHome extends StatelessWidget {
   final num latitude;
@@ -30,7 +28,7 @@ class ManageServiceHome extends StatelessWidget {
                 //   ),
                 // );
               },
-              child: Text('Google Map'),
+              child: const Text('Google Map'),
             ),
           ),
           Center(
@@ -46,7 +44,7 @@ class ManageServiceHome extends StatelessWidget {
                 //   ),
                 // );
               },
-              child: Text('Google Map'),
+              child:const Text('Google Map'),
             ),
           ),
         ],

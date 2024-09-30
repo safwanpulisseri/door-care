@@ -39,7 +39,7 @@ class _ChatPageState extends State<ChatPage> {
     final messageText = _messageController.text.trim();
     if (messageText.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text('Message cannot be empty'),
         ),
       );
@@ -70,17 +70,17 @@ class _ChatPageState extends State<ChatPage> {
                 width: 40,
                 fit: BoxFit.cover,
                 errorBuilder: (context, error, stackTrace) {
-                  return Icon(Icons.error, color: Colors.red, size: 40);
+                  return const Icon(Icons.error, color: Colors.red, size: 40);
                 },
               )
-            : Icon(
+            : const Icon(
                 Icons.person,
                 color: Colors.white,
                 size: 40,
               ),
         title: Text(
           'Chat with ${widget.conversation.user}',
-          style: TextStyle(
+          style: const TextStyle(
             color: AppColor.background,
           ),
         ),
@@ -93,7 +93,7 @@ class _ChatPageState extends State<ChatPage> {
                 MaterialPageRoute(builder: (context) => HomeNavigationMenu()),
               );
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.cancel,
               color: AppColor.background,
             ),
@@ -105,7 +105,7 @@ class _ChatPageState extends State<ChatPage> {
           if (state is CreateMessageSuccessState) {
             Navigator.pop(context);
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
+              const SnackBar(
                 content: Text('Message sent successfully!'),
               ),
             );
@@ -113,7 +113,7 @@ class _ChatPageState extends State<ChatPage> {
           } else if (state is CreateConversationFailState) {
             Navigator.pop(context);
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
+              const SnackBar(
                 content: Text('Failed to send message. Please try again.'),
               ),
             );
@@ -122,7 +122,7 @@ class _ChatPageState extends State<ChatPage> {
         child: BlocBuilder<CreateConversationBloc, CreateConversationState>(
           builder: (context, state) {
             if (state is CreateConversationLoadingState) {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             } else if (state is GetAllMessagesSuccessState) {
@@ -148,14 +148,14 @@ class _ChatPageState extends State<ChatPage> {
                         Expanded(
                           child: TextField(
                             controller: _messageController,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
                               hintText: 'Type a message',
                               border: OutlineInputBorder(),
                             ),
                           ),
                         ),
                         IconButton(
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.send,
                             color: AppColor.primary,
                           ),
@@ -167,7 +167,7 @@ class _ChatPageState extends State<ChatPage> {
                 ],
               );
             } else {
-              return Center(
+              return const Center(
                 child: Text('Failed to load messages.'),
               );
             }

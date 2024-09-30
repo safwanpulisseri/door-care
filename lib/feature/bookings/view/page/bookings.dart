@@ -70,15 +70,7 @@ class _BookingPageState extends State<BookingPage>
                 _buildSegment('Pending', 0),
                 _buildSegment('Committed', 1),
                 _buildSegment('Completed', 2),
-                // Tab(
-                //   text: 'Pending',
-                // ),
-                // Tab(
-                //   text: 'Committed',
-                // ),
-                // Tab(
-                //   text: 'Completed',
-                // )
+                
               ],
             ),
           ),
@@ -116,7 +108,7 @@ class _BookingPageState extends State<BookingPage>
           style: TextStyle(
             color:
                 _selectedIndex == index ? AppColor.primary : AppColor.toneThree,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.bold,fontSize: 10,
           ),
         ),
       ),

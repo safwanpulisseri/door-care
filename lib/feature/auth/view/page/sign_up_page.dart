@@ -1,5 +1,5 @@
 import 'dart:developer';
-import 'package:door_care/feature/auth/bloc/auth_bloc/auth_bloc.dart';
+import 'package:door_care/feature/auth/auth_bloc/auth_bloc.dart';
 import 'package:door_care/feature/auth/view/util/auth_util.dart';
 import 'package:door_care/feature/auth/view/widget/loading_dialog.dart';
 import 'package:door_care/core/widget/appbar_widget.dart';
@@ -26,8 +26,6 @@ class _SignUpPageState extends State<SignUpPage> {
   final TextEditingController _mobileController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  //final TextEditingController _confirmPasswordController =
-  //    TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
@@ -37,7 +35,7 @@ class _SignUpPageState extends State<SignUpPage> {
     _mobileController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
-    //  _confirmPasswordController.dispose();
+ 
   }
 
   @override
@@ -122,15 +120,6 @@ class _SignUpPageState extends State<SignUpPage> {
                     showPasswordToggle: true,
                     prefixIcon: IconlyLight.lock,
                   ),
-                  // AuthTextFormField(
-                  //   controller: _confirmPasswordController,
-                  //   labelText: 'Confirm Password',
-                  //   hintText: 'Re-Enter your password',
-                  //   obscureText: true,
-                  //   validator: (value) => validateConfirmPassword(
-                  //       value, _passwordController.text),
-                  //   showPasswordToggle: true,
-                  // ),
                   const SizedBox(
                     height: 10,
                   ),

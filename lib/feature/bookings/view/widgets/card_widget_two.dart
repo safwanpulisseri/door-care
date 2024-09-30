@@ -1,4 +1,5 @@
 import 'package:door_care/feature/manageService/chat/data/service/remote/start_chat.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -25,7 +26,7 @@ class CardWidgetTwo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    void _navigateToChatPage(String senderId, String receiverId) async {
+    void navigateToChatPage(String senderId, String receiverId) async {
       try {
         // Get the conversation details from the API
         final response = await startConversation(senderId, receiverId);
@@ -36,6 +37,7 @@ class CardWidgetTwo extends StatelessWidget {
 
         // Navigate to the chat page with the obtained conversation ID, username, and user profile
         Navigator.push(
+          // ignore: use_build_context_synchronously
           context,
           MaterialPageRoute(
             builder: (context) => ChatPageThree(
@@ -49,7 +51,9 @@ class CardWidgetTwo extends StatelessWidget {
         );
       } catch (e) {
         // Handle errors if the API call fails
-        print('Error: $e');
+        if (kDebugMode) {
+          print('Error: $e');
+        }
         // Optionally, show an error message to the user
       }
     }
@@ -225,7 +229,7 @@ class CardWidgetTwo extends StatelessWidget {
                       //         receiverId: service.userId,
                       //       ),
                       //     );
-                      _navigateToChatPage(service.userId, service.workerId!);
+                      navigateToChatPage(service.userId, service.workerId!);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColor.primary,

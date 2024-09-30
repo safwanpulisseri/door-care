@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../../core/util/redirect_link.dart';
 import '../../../../core/widget/navigation_text.dart';
 

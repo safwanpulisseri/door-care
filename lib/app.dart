@@ -1,14 +1,11 @@
 import 'package:door_care/app_view.dart';
-import 'package:door_care/feature/auth/bloc/auth_bloc/auth_bloc.dart';
+import 'package:door_care/feature/auth/auth_bloc/auth_bloc.dart';
 import 'package:door_care/feature/auth/data/service/local/auth_local_service.dart';
 import 'package:door_care/feature/auth/data/service/remote/auth_remote_service.dart';
 import 'package:door_care/feature/auth/data/repository/auth_repo.dart';
 import 'package:door_care/feature/navigation_menu/bloc/bloc/navigation_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'feature/drawer/bloc/bloc/update_profile_bloc.dart';
-import 'feature/drawer/data/repository/update_profile_repo.dart';
-import 'feature/drawer/data/service/remote/update_profile_remote.dart';
 import 'feature/manageService/chat/bloc/bloc/create_conversation_bloc.dart';
 import 'feature/manageService/chat/data/repository/createConversationRepo.dart';
 import 'feature/manageService/chat/data/service/remote/createConversationRemote.dart';
@@ -41,12 +38,7 @@ class MyApp extends StatelessWidget {
             AuthLocalService(),
           ),
         ),
-        RepositoryProvider(
-          create: (context) => UpdateProfileRepo(
-            UpdateProfileRemote(),
-            AuthLocalService(),
-          ),
-        ),
+       
       ],
       child: MultiBlocProvider(
         providers: [
@@ -65,10 +57,7 @@ class MyApp extends StatelessWidget {
             create: (context) =>
                 CreateConversationBloc(context.read<Createconversationrepo>()),
           ),
-          BlocProvider(
-            create: (context) =>
-                UpdateProfileBloc(context.read<UpdateProfileRepo>()),
-          ),
+         
         ],
         child: const MyAppView(),
       ),

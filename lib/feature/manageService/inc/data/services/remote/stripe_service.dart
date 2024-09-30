@@ -1,4 +1,5 @@
 import 'package:door_care/feature/manageService/inc/data/services/remote/pay_service_remote.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import '../../../view/pages/payment_fail_page.dart';
@@ -22,7 +23,9 @@ class StripeService {
         bookingId: bookingId,
         workerId: workerId,
       );
-      print('Session ID: $sessionId');
+      if (kDebugMode) {
+        print('Session ID: $sessionId');
+      }
 
       if (sessionId != null) {
         // Initialize Stripe
@@ -37,8 +40,11 @@ class StripeService {
         await Stripe.instance.presentPaymentSheet();
 
         // Payment successful
-        print('Payment successful');
+        if (kDebugMode) {
+          print('Payment successful');
+        }
         Navigator.pushReplacement(
+          // ignore: use_build_context_synchronously
           context,
           MaterialPageRoute(
             builder: (ctx) =>
@@ -46,8 +52,11 @@ class StripeService {
           ),
         );
       } else {
-        print('Failed to create payment session');
+        if (kDebugMode) {
+          print('Failed to create payment session');
+        }
         Navigator.pushReplacement(
+          // ignore: use_build_context_synchronously
           context,
           MaterialPageRoute(
             builder: (ctx) =>
@@ -57,11 +66,16 @@ class StripeService {
       }
     } catch (e) {
       if (e is StripeException) {
-        print('Error from Stripe: ${e.error.localizedMessage}');
+        if (kDebugMode) {
+          print('Error from Stripe: ${e.error.localizedMessage}');
+        }
       } else {
-        print('Error during payment: $e');
+        if (kDebugMode) {
+          print('Error during payment: $e');
+        }
       }
       Navigator.pushReplacement(
+        // ignore: use_build_context_synchronously
         context,
         MaterialPageRoute(
           builder: (ctx) =>

@@ -18,18 +18,8 @@ class HomeNavigationMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<NavigationBloc, NavigationState>(
-      listener: (context, state) {
-        // if (state is NavigationPageState) {
-        //   if (state.pageIndex == 0) {
-        //     context
-        //         .read<FetchAllAddedServicesBloc>()
-        //         .add(FetchAllServicesEvent());
-        //   } else if (state.pageIndex == 1) {
-        //     //
-        //   }
-        // }
-      },
+    return BlocBuilder<NavigationBloc, NavigationState>(
+    
       builder: (context, state) {
         int selectedIndex = state is NavigationPageState ? state.pageIndex : 0;
         return Scaffold(

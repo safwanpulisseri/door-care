@@ -23,13 +23,13 @@ class ChatScreen extends StatelessWidget {
                 Navigator.pop(context);
               },
             ),
-            CircleAvatar(
+            const CircleAvatar(
               backgroundColor: AppColor.toneThree,
               backgroundImage: AssetImage(
                 AppPngPath.personImage,
               ),
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -54,7 +54,7 @@ class ChatScreen extends StatelessWidget {
         children: [
           Expanded(
             child: ListView(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               children: [
                 _buildChatBubble(
                   context,
@@ -118,7 +118,7 @@ class ChatScreen extends StatelessWidget {
                 CircleAvatar(
                   backgroundImage: AssetImage(avatar!),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Text(name!,
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
@@ -127,8 +127,8 @@ class ChatScreen extends StatelessWidget {
             ),
           ),
         Container(
-          margin: EdgeInsets.symmetric(vertical: 5),
-          padding: EdgeInsets.all(12),
+          margin: const EdgeInsets.symmetric(vertical: 5),
+          padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
             color: bgColor,
             borderRadius: BorderRadius.circular(10),
@@ -138,7 +138,7 @@ class ChatScreen extends StatelessWidget {
             children: [
               Text(message,
                   style: GoogleFonts.poppins(color: textColor, fontSize: 14)),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               Text(timestamp,
                   style: GoogleFonts.poppins(
                       color: textColor.withOpacity(0.6), fontSize: 10)),
@@ -183,7 +183,7 @@ class ChatScreen extends StatelessWidget {
                   fontSize: 16.0,
                 )),
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           GestureDetector(

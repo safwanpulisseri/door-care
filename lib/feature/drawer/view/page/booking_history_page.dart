@@ -11,7 +11,6 @@ import '../../../bookings/bloc/fetch_all_completed_service_bloc/fetch_all_comple
 import '../../../bookings/data/repository/fetch_all_completed_repo.dart';
 import '../../../bookings/data/service/remote/fetch_all_completed_remote.dart';
 import '../../../bookings/view/widgets/card_widget_three.dart';
-import '../../../bookings/view/widgets/card_widget_two.dart';
 
 class BookingHistoryPage extends StatelessWidget {
   const BookingHistoryPage({super.key});

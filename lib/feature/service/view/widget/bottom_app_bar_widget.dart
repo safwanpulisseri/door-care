@@ -16,6 +16,7 @@ class BottomAppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return BottomAppBar(
       color: AppColor.textfield,
       child: Row(
@@ -24,7 +25,9 @@ class BottomAppBarWidget extends StatelessWidget {
           ElevatedButton(
             onPressed: onLeftButtonPressed,
             style: ButtonStyle(
-              minimumSize: WidgetStateProperty.all(const Size(200, 50)),
+              minimumSize: WidgetStateProperty.all(
+                Size(screenWidth * 0.43, 50),
+              ),
               backgroundColor: WidgetStateProperty.all(AppColor.textfield),
               foregroundColor:
                   WidgetStateProperty.all(AppColor.secondary.withOpacity(0.7)),
@@ -45,7 +48,9 @@ class BottomAppBarWidget extends StatelessWidget {
           ElevatedButton(
             onPressed: onRightButtonPressed,
             style: ButtonStyle(
-              minimumSize: WidgetStateProperty.all(const Size(200, 50)),
+              minimumSize: WidgetStateProperty.all(
+                Size(screenWidth * 0.43, 50),
+              ),
               backgroundColor: WidgetStateProperty.all(AppColor.primary),
               foregroundColor: WidgetStateProperty.all(Colors.white),
               shape: WidgetStateProperty.all(

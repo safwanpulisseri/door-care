@@ -1,3 +1,4 @@
+// ignore_for_file: file_names
 import 'dart:developer';
 import 'package:dio/dio.dart';
 import '../../../../auth/data/model/user_model.dart';
@@ -35,7 +36,7 @@ class Createconversationrepo {
       if (response.statusCode == 200) {
         final Map<String, dynamic> responseData =
             response.data['newConversation']['data'] as Map<String, dynamic>;
-        log('Parsed Response Data: ${responseData}');
+        log('Parsed Response Data: $responseData');
         final ConversationModel conversationModel =
             ConversationModel.fromMap(responseData);
 
@@ -97,7 +98,7 @@ class Createconversationrepo {
       if (response.statusCode == 200) {
         final List<dynamic> responseData =
             response.data['message']['data'] as List<dynamic>;
-        log('Parsed Response Data: ${responseData}');
+        log('Parsed Response Data: $responseData');
 
         // Convert the list of data to a list of MessageModel objects
         final List<GetAllMessageModel> messages = responseData
