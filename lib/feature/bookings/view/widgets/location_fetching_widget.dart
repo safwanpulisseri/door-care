@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:geocoding/geocoding.dart';
 import '../../../../core/theme/color/app_color.dart';
 
@@ -50,9 +50,11 @@ class LocationFetchingWidget extends StatelessWidget {
                       width: 1.0,
                     ),
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SvgPicture.asset("assets/svg/booking_two.svg"),
+                  child:  const Padding(
+                    padding: EdgeInsets.all(7.0),
+                    child: Icon(
+                      IconlyLight.location,
+                    ),
                   ),
                 ),
               ),
@@ -80,9 +82,11 @@ class LocationFetchingWidget extends StatelessWidget {
                       width: 1.0,
                     ),
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SvgPicture.asset("assets/svg/booking_two.svg"),
+                  child:  const Padding(
+                    padding: EdgeInsets.all(7.0),
+                    child: Icon(
+                      IconlyLight.location,
+                    ),
                   ),
                 ),
               ),
@@ -110,9 +114,11 @@ class LocationFetchingWidget extends StatelessWidget {
                       width: 1.0,
                     ),
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SvgPicture.asset("assets/svg/booking_two.svg"),
+                   child:  const Padding(
+                    padding: EdgeInsets.all(7.0),
+                    child: Icon(
+                      IconlyLight.location,
+                    ),
                   ),
                 ),
               ),
