@@ -1,5 +1,5 @@
 import 'package:door_care/app.dart';
-import 'package:door_care/firebase_option.dart';
+import 'package:door_care/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -16,7 +16,7 @@ void main() async {
   Stripe.publishableKey = stripeKey;
   await Stripe.instance.applySettings();
 
-  // Initialize Firebase
+  // // Initialize Firebase
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

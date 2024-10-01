@@ -88,6 +88,18 @@ class _BookingPageState extends State<BookingPage>
   }
 
   Widget _buildSegment(String text, int index) {
+     // Get the screen width
+  final double screenWidth = MediaQuery.of(context).size.width;
+
+  // Determine the font size based on screen width
+  double fontSize;
+  if (screenWidth < 360) {
+    fontSize = 10; // Small screens
+  } else if (screenWidth < 600) {
+    fontSize = 12; // Medium screens
+  } else {
+    fontSize = 14; // Large screens
+  }
     return GestureDetector(
       onTap: () {
         setState(() {
@@ -108,7 +120,7 @@ class _BookingPageState extends State<BookingPage>
           style: TextStyle(
             color:
                 _selectedIndex == index ? AppColor.primary : AppColor.toneThree,
-            fontWeight: FontWeight.bold,fontSize: 10,
+            fontWeight: FontWeight.bold,fontSize: fontSize,
           ),
         ),
       ),
