@@ -17,38 +17,38 @@ class HowToUsePage extends StatelessWidget {
     return Scaffold(
       appBar: const AppBarSingle(),
       body: PaddingWidget(
-        child: Column(
-          children: [
-            // Row at the top
-            Row(
-              children: [
-                const OpacityContainer(),
-                const SizedBox(
-                  width: 10,
-                ),
-                Text(
-                  'How to use',
-                  style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                        color: AppColor.secondary,
-                        fontSize: 30,
-                      ),
-                ),
-              ],
-            ),
-
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+        child: SingleChildScrollView(
+          child: Column(
+          
+            children: [
+          
+              Row(
+                children: [
+                  const OpacityContainer(),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    'How to use',
+                    style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                          color: AppColor.secondary,
+                          fontSize: 30,
+                        ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: screenWidth * 0.3 ,
+              ),
+              Column(
                 children: [
                   SvgPicture.asset(
                     AppSvgPath.mainLogo,
                   ),
-                  SizedBox(
-                    width: screenWidth * 0.7,
-                  ),
-                  const SizedBox(
-                    width: 250,
-                    child: Text(
+                 
+                   SizedBox(
+                     width: screenWidth * 0.8,
+                    child:const Text(
                       "Here's a quick guide on how to use the app: Enjoy using the app and manage your home services efficiently. Please visit our YouTube channel or watch our video now.",
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -56,19 +56,17 @@ class HowToUsePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  
                   GestureDetector(
                     onTap: () async {
                       await RedirectLink
-                          .launchYouTubeVideo(); // Launch YouTube video on tap
+                          .launchYouTubeVideo(); 
                     },
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'YouTube video link', // Text to act as a link
+                          'YouTube video link', 
                           style: TextStyle(
                             color: AppColor.toneFive,
                             decoration: TextDecoration.underline,
@@ -84,8 +82,8 @@ class HowToUsePage extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

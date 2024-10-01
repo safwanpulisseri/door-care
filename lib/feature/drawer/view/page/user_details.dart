@@ -65,7 +65,7 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                         : const AssetImage(AppPngPath.personImage)
                             as ImageProvider,
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 20),
                   // ElevatedButton.icon(
                   //   onPressed: () {
                   //     showImageSourceSelection(context);
@@ -80,7 +80,7 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                   //         horizontal: 16, vertical: 8),
                   //   ),
                   // ),
-                  const Spacer(flex: 1),
+                 
                   AuthTextFormField(
                     controller: _nameController,
                     labelText: 'Name',
@@ -95,7 +95,8 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                     prefixIcon: IconlyLight.call,
                     textInputType: TextInputType.phone,
                   ),
-                 
+                  
+                   const Spacer(flex: 2),
                 ],
               ),
             );

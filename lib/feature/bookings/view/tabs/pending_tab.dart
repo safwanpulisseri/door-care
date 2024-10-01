@@ -10,11 +10,9 @@ import '../../../../core/widget/toastifiaction_widget.dart';
 import '../../../auth/data/service/local/auth_local_service.dart';
 import '../../../auth/view/widget/loading_dialog.dart';
 import '../../bloc/fetch_all_booked_pending_service_bloc/fetch_all_pending_services_bloc.dart';
-import '../../data/repository/cancel_a_booked_pending_service_repo.dart';
 import '../../data/repository/fetch_all_booked_pending_service_repo.dart';
-import '../../data/service/remote/cancel_a_booked_pending_service.dart';
 import '../../data/service/remote/fetch_all_booked_pending_service_details.dart';
-import '../widgets/card_widget.dart';
+import '../widgets/pending_card_widget.dart';
 
 class TabScreenOne extends StatefulWidget {
   const TabScreenOne({super.key});
@@ -67,46 +65,38 @@ class _TabScreenOneState extends State<TabScreenOne> {
                   itemCount: services.length,
                   itemBuilder: (context, index) {
                     final service = services[index];
-                    return BlocProvider(
-                      create: (context) => CancelABookedPendingServiceBloc(
-                        CancelABookedPendingServiceRepo(
-                          CancelABookedPendingService(),
-                          AuthLocalService(),
-                        ),
-                      ),
-                      child: BlocListener<CancelABookedPendingServiceBloc,
-                          CancelABookedPendingServiceState>(
-                        listener: (context, cancelState) {
-                          if (cancelState
-                              is CancelABookedPendingServiceLoadingState) {
-                            LoadingDialog.show(context);
-                          } else if (cancelState
-                              is CancelABookedPendingServiceSuccessState) {
-                            Navigator.pop(context);
-                            ToastificationWidget.show(
-                              context: context,
-                              type: ToastificationType.success,
-                              title: 'Success',
-                              description:
-                                  'Service booking cancelled successfully',
-                            );
-                            // Trigger a reload of the pending services
-                            context
-                                .read<FetchAllPendingServicesBloc>()
-                                .add(FetchAllBookedPendingServicesEvent());
-                          } else if (cancelState
-                              is CancelABookedPendingServiceFailState) {
-                            Navigator.pop(context);
-                            ToastificationWidget.show(
-                              context: context,
-                              type: ToastificationType.error,
-                              title: 'Error',
-                              description: 'Failed to cancel service booking',
-                            );
-                          }
-                        },
-                        child: CardWidget(service: service),
-                      ),
+                    return BlocListener<CancelABookedPendingServiceBloc,
+                        CancelABookedPendingServiceState>(
+                      listener: (context, cancelState) {
+                        if (cancelState
+                            is CancelABookedPendingServiceLoadingState) {
+                          LoadingDialog.show(context);
+                        } else if (cancelState
+                            is CancelABookedPendingServiceSuccessState) {
+                          Navigator.pop(context);
+                          ToastificationWidget.show(
+                            context: context,
+                            type: ToastificationType.success,
+                            title: 'Success',
+                            description:
+                                'Service booking cancelled successfully',
+                          );
+                          // Trigger a reload of the pending services
+                          context
+                              .read<FetchAllPendingServicesBloc>()
+                              .add(FetchAllBookedPendingServicesEvent());
+                        } else if (cancelState
+                            is CancelABookedPendingServiceFailState) {
+                          Navigator.pop(context);
+                          ToastificationWidget.show(
+                            context: context,
+                            type: ToastificationType.error,
+                            title: 'Error',
+                            description: 'Failed to cancel service booking',
+                          );
+                        }
+                      },
+                      child: CardWidget(service: service),
                     );
                   },
                 ),

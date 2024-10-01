@@ -33,77 +33,80 @@ class StepperWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Column(
-          children: [
-            CircleAvatar(
-              radius: 20,
-              backgroundColor: circleColorOne,
-              child: iconOne,
-            ),
-            const SizedBox(height: 4),
-            Text(
-              titleOne,
-              style: TextStyle(
-                fontSize: 12,
-                color: titleColorOne,
+    return Padding(
+      padding: const EdgeInsets.only(top: 5),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Column(
+            children: [
+              CircleAvatar(
+                radius: 20,
+                backgroundColor: circleColorOne,
+                child: iconOne,
               ),
-            ),
-          ],
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 20),
-          child: Container(
-            height: 3,
-            width: 80,
-            color: AppColor.toneEight.withOpacity(0.6),
+              const SizedBox(height: 4),
+              Text(
+                titleOne,
+                style: TextStyle(
+                  fontSize: 12,
+                  color: titleColorOne,
+                ),
+              ),
+            ],
           ),
-        ),
-        Column(
-          children: [
-            CircleAvatar(
-              radius: 20,
-              backgroundColor: circleColorTwo,
-              child: iconTwo,
+          Padding(
+            padding: const EdgeInsets.only(bottom: 20),
+            child: Container(
+              height: 3,
+              width: 80,
+              color: AppColor.toneEight.withOpacity(0.6),
             ),
-            const SizedBox(height: 4),
-            Text(
-              titleTwo,
-              style: TextStyle(
-                fontSize: 12,
-                color: titleColorTwo,
-              ),
-            ),
-          ],
-        ),
-        Padding(
-          padding: const EdgeInsets.only(bottom: 20),
-          child: Container(
-            height: 3,
-            width: 80,
-            color: AppColor.toneEight.withOpacity(0.6),
           ),
-        ),
-        Column(
-          children: [
-            CircleAvatar(
-              radius: 20,
-              backgroundColor: circleColorThree,
-              child: iconThree,
-            ),
-            const SizedBox(height: 4),
-            Text(
-              titleThree,
-              style: TextStyle(
-                fontSize: 12,
-                color: titleColorThree,
+          Column(
+            children: [
+              CircleAvatar(
+                radius: 20,
+                backgroundColor: circleColorTwo,
+                child: iconTwo,
               ),
+              const SizedBox(height: 4),
+              Text(
+                titleTwo,
+                style: TextStyle(
+                  fontSize: 12,
+                  color: titleColorTwo,
+                ),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 20),
+            child: Container(
+              height: 3,
+              width: 80,
+              color: AppColor.toneEight.withOpacity(0.6),
             ),
-          ],
-        ),
-      ],
+          ),
+          Column(
+            children: [
+              CircleAvatar(
+                radius: 20,
+                backgroundColor: circleColorThree,
+                child: iconThree,
+              ),
+              const SizedBox(height: 4),
+              Text(
+                titleThree,
+                style: TextStyle(
+                  fontSize: 12,
+                  color: titleColorThree,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

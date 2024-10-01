@@ -15,8 +15,8 @@ void main() async {
   final stripeKey = dotenv.env['STRIPE_PUBLISHABLE_API_KEY']!;
   Stripe.publishableKey = stripeKey;
   await Stripe.instance.applySettings();
-
-  // // Initialize Firebase
+  // // Initia
+  //Initialize Firebase
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

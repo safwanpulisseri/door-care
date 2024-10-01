@@ -13,7 +13,7 @@ class ServiceCard extends StatelessWidget {
       width: double.infinity,
       height: 230,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(20),

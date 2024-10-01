@@ -106,5 +106,6 @@ class AuthRemoteService {
       log('Error during Google sign in $e');
       throw Exception();
     }
+    return null;
   }
 }
